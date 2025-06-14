@@ -1,12 +1,13 @@
 const Livro = require('../models/livro');
+const Autor = require('../models/autor');
 
 exports.getAll = async (req, res) => {
-  const livros = await Livro.findAll();
+  const livros = await Livro.findAll({ include: { model: Autor, as: 'autor' } });
   res.json(livros);
 };
 
 exports.getById = async (req, res) => {
-  const livro = await Livro.findByPk(req.params.id);
+  const livro = await Livro.findByPk(req.params.id, { include: { model: Autor, as: 'autor' } });
   livro ? res.json(livro) : res.status(404).json({ error: 'Livro não encontrado' });
 };
 
