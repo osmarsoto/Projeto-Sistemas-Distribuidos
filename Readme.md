@@ -1,41 +1,54 @@
-# Projeto API RESTful com Acesso a Banco de Dados
+# Projeto A3 - Sistemas Distribuídos  
+API RESTful com Acesso a Banco de Dados
 
-Este projeto consiste na construção de uma API RESTful completa utilizando Node.js e Express, que realiza operações CRUD (Create, Read, Update, Delete) sobre entidades armazenadas em um banco de dados relacional. A comunicação entre cliente e servidor é feita via JSON.
-
-## Integrantes
-- Felippe Vieira Nascimento Silva - 323125784  
-- Kauan Guilherme Pinto Dos Santos - 12724228176  
-- Osmar Soto da Rosa - RA 12522226221  
+## Integrantes:
+- Felippe Vieira Nascimento Silva - RA: 323125784  
+- Kauan Guilherme Pinto dos Santos - RA: 12724228176  
+- Osmar Soto da Rosa - RA: 12522226221  
 
 ## Descrição do Projeto
-A API manipula dados de pelo menos duas entidades distintas em um banco de dados relacional (MySQL, PostgreSQL ou SQLite), respeitando todos os constraints da arquitetura REST conforme definido por Roy Fielding:
-
-1. **Client-Server:** Separação entre cliente e servidor.  
-2. **Stateless:** Requisições independentes e autocontidas.  
-3. **Cacheable:** Respostas indicam possibilidade de cache.  
-4. **Uniform Interface:** Interface padronizada e uniforme para recursos.  
-5. **Layered System:** Suporte a camadas intermediárias na arquitetura.  
-6. **Code on Demand (opcional):** Possibilidade de envio de scripts para o cliente (não implementado neste projeto).
-
-## Endpoints Disponíveis
-
-| Método | Endpoint           | Descrição                          |
-|--------|--------------------|----------------------------------|
-| GET    | `/entidade`        | Lista todos os registros          |
-| GET    | `/entidade/:id`    | Busca registro por ID             |
-| POST   | `/entidade`        | Cria novo registro                |
-| PUT    | `/entidade/:id`    | Atualiza totalmente um registro   |
-| PATCH  | `/entidade/:id`    | Atualiza parcialmente um registro |
-| DELETE | `/entidade/:id`    | Remove um registro                |
+Este projeto consiste na construção de uma API RESTful com operações completas de CRUD, utilizando Node.js com Express e banco de dados MySQL. O sistema foi desenvolvido seguindo os princípios da arquitetura REST e permite o gerenciamento de dados de livros e autores.
 
 ## Tecnologias Utilizadas
-- **Node.js**  
-- **Express.js**  
-- Banco de dados relacional: MySQL / PostgreSQL / SQLite  
-- Comunicação via JSON  
+- Node.js  
+- Express  
+- MySQL  
+- Insomnia (para testes de requisições)
+
+## Entidades e Rotas
+
+### 📚 Rotas de Livros (`/api/livros`)
+| Método | Rota              | Descrição                          |
+|--------|-------------------|------------------------------------|
+| GET    | `/api/livros`     | Lista todos os livros              |
+| GET    | `/api/livros/:id` | Busca um livro por ID              |
+| POST   | `/api/livros`     | Cria um novo livro                 |
+| PUT    | `/api/livros/:id` | Atualiza todos os campos de um livro |
+| PATCH  | `/api/livros/:id` | Atualiza parcialmente um livro     |
+| DELETE | `/api/livros/:id` | Deleta um livro                    |
+
+### ✍️ Rotas de Autores (`/api/autores`)
+| Método | Rota               | Descrição                            |
+|--------|--------------------|--------------------------------------|
+| GET    | `/api/autores`     | Lista todos os autores               |
+| GET    | `/api/autores/:id` | Busca um autor por ID                |
+| POST   | `/api/autores`     | Cria um novo autor                   |
+| PUT    | `/api/autores/:id` | Atualiza todos os campos de um autor |
+| DELETE | `/api/autores/:id` | Deleta um autor                      |
+
+## Requisitos REST Implementados
+- **Client-Server:** Separação entre frontend e backend.  
+- **Stateless:** Cada requisição contém todas as informações necessárias.  
+- **Cacheable:** Respostas podem ser cacheadas (quando aplicável).  
+- **Uniform Interface:** Interface consistente seguindo convenções REST.  
+- **Layered System:** Arquitetura em camadas.  
+
 
 ## Como Executar
-
 1. Clone o repositório:  
-   ```bash
-   git clone https://github.com/KauanGPDS/Projeto-Sistemas-Distribuidos.git
+   `git clone https://github.com/KauanGPDS/Projeto-Sistemas-Distribuidos.git`
+2. Instale as dependências:  
+   `npm install`
+3. Configure o banco de dados MySQL conforme o modelo no projeto.
+4. Inicie o servidor:  
+   `node index.js`
