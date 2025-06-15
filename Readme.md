@@ -1,41 +1,61 @@
-# Projeto API RESTful com Acesso a Banco de Dados
+Projeto A3 - API RESTful com Banco de Dados
+Disciplina: Sistemas Distribuídos
+Instituição: [Seu nome de faculdade aqui, se desejar incluir]
 
-Este projeto consiste na construção de uma API RESTful completa utilizando Node.js e Express, que realiza operações CRUD (Create, Read, Update, Delete) sobre entidades armazenadas em um banco de dados relacional. A comunicação entre cliente e servidor é feita via JSON.
+👨‍💻 Integrantes
+Felippe Vieira Nascimento Silva – RA: 323125784
 
-## Integrantes
-- Felippe Vieira Nascimento Silva - 323125784  
-- Kauan Guilherme Pinto Dos Santos - 12724228176  
-- Osmar Soto da Rosa - RA 12522226221  
+Kauan Guilherme Pinto Dos Santos – RA: 12724228176
 
-## Descrição do Projeto
-A API manipula dados de pelo menos duas entidades distintas em um banco de dados relacional (MySQL, PostgreSQL ou SQLite), respeitando todos os constraints da arquitetura REST conforme definido por Roy Fielding:
+Osmar Soto da Rosa – RA: 12522226221
 
-1. **Client-Server:** Separação entre cliente e servidor.  
-2. **Stateless:** Requisições independentes e autocontidas.  
-3. **Cacheable:** Respostas indicam possibilidade de cache.  
-4. **Uniform Interface:** Interface padronizada e uniforme para recursos.  
-5. **Layered System:** Suporte a camadas intermediárias na arquitetura.  
-6. **Code on Demand (opcional):** Possibilidade de envio de scripts para o cliente (não implementado neste projeto).
+📄 Descrição do Projeto
+Este repositório contém o desenvolvimento de uma API RESTful criada para fins acadêmicos, com operações de CRUD sobre as entidades Livro e Autor. O projeto segue os princípios da arquitetura REST, acessando e manipulando dados em um banco de dados relacional (MySQL).
 
-## Endpoints Disponíveis
+⚙️ Tecnologias Utilizadas
+Node.js
 
-| Método | Endpoint           | Descrição                          |
-|--------|--------------------|----------------------------------|
-| GET    | `/entidade`        | Lista todos os registros          |
-| GET    | `/entidade/:id`    | Busca registro por ID             |
-| POST   | `/entidade`        | Cria novo registro                |
-| PUT    | `/entidade/:id`    | Atualiza totalmente um registro   |
-| PATCH  | `/entidade/:id`    | Atualiza parcialmente um registro |
-| DELETE | `/entidade/:id`    | Remove um registro                |
+Express
 
-## Tecnologias Utilizadas
-- **Node.js**  
-- **Express.js**  
-- Banco de dados relacional: MySQL / PostgreSQL / SQLite  
-- Comunicação via JSON  
+MySQL
 
-## Como Executar
+Insomnia (para testes de requisições HTTP)
 
-1. Clone o repositório:  
-   ```bash
-   git clone https://github.com/KauanGPDS/Projeto-Sistemas-Distribuidos.git
+🔁 Funcionalidades da API
+A API foi construída com os seguintes endpoints para cada entidade:
+
+📘 Livros (/api/livros)
+Método	Endpoint	Descrição
+GET	/api/livros	Lista todos os livros
+GET	/api/livros/:id	Busca um livro por ID
+POST	/api/livros	Cria um novo livro
+PUT	/api/livros/:id	Atualiza todos os campos do livro
+PATCH	/api/livros/:id	Atualiza parcialmente um livro
+DELETE	/api/livros/:id	Deleta um livro
+
+✍️ Autores (/api/autores)
+Método	Endpoint	Descrição
+GET	/api/autores	Lista todos os autores
+GET	/api/autores/:id	Busca um autor por ID
+POST	/api/autores	Cria um novo autor
+PUT	/api/autores/:id	Atualiza todos os campos do autor
+DELETE	/api/autores/:id	Deleta um autor
+
+🛠️ Arquitetura REST Implementada
+O projeto foi desenvolvido conforme os 6 constraints da arquitetura REST, descritos por Roy Fielding:
+
+Client-Server: Separação entre cliente e servidor
+
+Stateless: Cada requisição contém todas as informações necessárias
+
+Cacheable: Respostas com possibilidade de cache (quando aplicável)
+
+Interface Uniforme: Uso de rotas e convenções padronizadas
+
+Sistema em Camadas: Suporte a camadas intermediárias (quando necessário)
+
+Code-on-Demand (opcional): Não implementado neste projeto
+
+🧪 Testes
+As requisições à API foram testadas utilizando o software Insomnia, simulando operações completas de CRUD para as entidades propostas.
+
